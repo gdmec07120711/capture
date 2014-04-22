@@ -32,7 +32,7 @@
             //var durationmax =5;
             var limition=2;
             var mediaTimer=null;
-			var mediaPath='http://aijavatool.duapp.com/xiami/1769834090/Flower-Dance.mp3';
+            var mediaPath='http://aijavatool.duapp.com/xiami/1769834090/Flower-Dance.mp3';
             function funcCaptureVideo(){
                 navigator.device.capture.captureVideo(captureSuccess, captureError,{limit:limition});
             }
@@ -60,10 +60,10 @@
                         $("#myvideo").attr("src",mediaFiles[i].fullPath);
                     }
 					
-					if (mediatype=="audio"){
-						//获取地址，去掉"file:"
+                    if (mediatype=="audio"){
+                        //获取地址，去掉"file:"
                         mediaPath = mediaFiles[i].fullPath.substr(5);
-						$("#myaudio").attr("src",mediaFiles[i].fullPath);
+                        $("#myaudio").attr("src",mediaFiles[i].fullPath);
                     }
                 }
             }
@@ -73,22 +73,22 @@
                 alert(msg);
             }
 			
-			// 音频播放函数
-			function playAudio(url) {
-				console.log("音频文件地址:"+url);
-				var my_media = new Media(url,
-					// success callback
-					function() {
-						console.log("playAudio():Audio Success");
-					},
-					// error callback
-					function(err) {
-						console.log("playAudio():Audio Error: "+err);
-				});
-				// Play audio
-				my_media.play();
-			}
-			
+            // 音频播放函数
+            function playAudio(url) {
+                console.log("音频文件地址:"+url);
+                var my_media = new Media(url,
+                    // success callback
+                    function() {
+                        console.log("playAudio():Audio Success");
+                    },
+                    // error callback
+                    function(err) {
+                        console.log("playAudio():Audio Error: "+err);
+                });
+                // Play audio
+                my_media.play();
+            }
+
         </script>
     </head>
     <body>
@@ -103,10 +103,10 @@
                     <a href="#"  data-role="button" id="captureImage" onclick="funcCaptureImage()">Capture Image</a>
                 </div>
                 <div >
-					<!-- first 不支持.m4a -->
-					<audio id="myaudio" src="" controls="controls"></audio>
+                    <!-- first 不支持.m4a -->
+                    <audio id="myaudio" src="" controls="controls"></audio>
 					
-					<!-- second 支持.m4a -->
+                    <!-- second 支持.m4a -->
                     <a href="#" data-role="button" onclick="playAudio(mediaPath);">Play Audio</a>
                 </div>
                 <div >
